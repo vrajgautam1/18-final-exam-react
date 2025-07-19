@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AdminPanel from "./pages/AdminPanel";
 import HomePage from "./pages/Home"; 
-import Header from "./components/header";
+import Header from "./components/Header";
 import axios from "axios";
 
 function App() {
