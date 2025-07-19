@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "../components/Form";
 import Table from "../components/Table";
-import Header from "../components/header";
 
-function AdminPanel({ productList, setProductList }) {
-    return (
-        <div>
-            <Form productList={productList} setProductList={setProductList} />
-            <Table productList={productList} />
-        </div>
-    );
+export default function AdminPanel({ productList, setProductList }) {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  return (
+    <div className="p-4 space-y-4">
+      <Form
+        productList={productList}
+        setProductList={setProductList}
+        selectedProduct={selectedProduct}
+        setSelectedProduct={setSelectedProduct}
+      />
+      <Table
+        productList={productList}
+        setProductList={setProductList}
+        setSelectedProduct={setSelectedProduct}
+      />
+    </div>
+  );
 }
-
-export default AdminPanel;
